@@ -12,7 +12,7 @@ else {
 
 if (!empty($_GET)) {
   $_SESSION['got'] = $_GET;
-  header('Location: '.$current_path);
+  header('Location: https://sales-mtmp.ew.r.appspot.com/');
   die;
 } else {
   if (!empty($_SESSION['got'])) {
