@@ -130,7 +130,7 @@ if(count($_GET)) {
       echo"<br><hr>";
     }
     else {
-      $datediff = "no variables difined, load white hat";
+      $datediff = "no variables difined, load w";
     }
     ?>
     <span><?php echo 'diff:'.$datediff.'<br>'; ?></span>
