@@ -12,7 +12,7 @@ else {
 
 if (!empty($_GET)) {
   $_SESSION['got'] = $_GET;
-  header('Location: https://sales-mtmp.ew.r.appspot.com/');
+  header('Location: http://localhost/rdr/index.bak.php');
   die;
 } else {
   if (!empty($_SESSION['got'])) {
