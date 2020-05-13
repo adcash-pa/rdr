@@ -1,0 +1,2 @@
+# rdr
+redirect script
