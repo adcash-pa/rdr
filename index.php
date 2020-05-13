@@ -2,9 +2,17 @@
 
 session_start();
 
+// find current path
+if( isset($_SERVER['HTTPS'] ) ) {
+  $current_path = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+}
+else {
+  $current_path = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+}
+
 if (!empty($_GET)) {
   $_SESSION['got'] = $_GET;
-  header('Location: http://localhost/rdr/');
+  header('Location: '.$current_path);
   die;
 } else {
   if (!empty($_SESSION['got'])) {
@@ -20,12 +28,6 @@ if (!empty($_GET)) {
     $match = FALSE; //same user sesssion with same click id
     $clickid = $_GET['action'];
     $pairmatch = array(session_id(), $clickid);
-    if( isset($_SERVER['HTTPS'] ) ) {
-      $current_path = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    }
-    else {
-      $current_path = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    }
 
     //compare session_id with log
     foreach ($lines as $line) {
